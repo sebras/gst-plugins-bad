@@ -280,7 +280,7 @@ gst_watchdog_sink_event (GstBaseTransform * trans, GstEvent * event)
 {
   GstWatchdog *watchdog = GST_WATCHDOG (trans);
 
-  GST_DEBUG_OBJECT (watchdog, "sink_event");
+  GST_DEBUG_OBJECT (watchdog, "received %" GST_PTR_FORMAT, event);
 
   GST_OBJECT_LOCK (watchdog);
   gst_watchdog_feed (watchdog);
@@ -296,7 +296,7 @@ gst_watchdog_src_event (GstBaseTransform * trans, GstEvent * event)
 {
   GstWatchdog *watchdog = GST_WATCHDOG (trans);
 
-  GST_DEBUG_OBJECT (watchdog, "src_event");
+  GST_DEBUG_OBJECT (watchdog, "received %" GST_PTR_FORMAT, event);
 
   GST_OBJECT_LOCK (watchdog);
   gst_watchdog_feed (watchdog);
@@ -311,7 +311,7 @@ gst_watchdog_transform_ip (GstBaseTransform * trans, GstBuffer * buf)
 {
   GstWatchdog *watchdog = GST_WATCHDOG (trans);
 
-  GST_DEBUG_OBJECT (watchdog, "transform_ip");
+  GST_DEBUG_OBJECT (watchdog, "transforming buffer %" GST_PTR_FORMAT, buf);
 
   GST_OBJECT_LOCK (watchdog);
   gst_watchdog_feed (watchdog);

@@ -243,6 +243,7 @@ check_PROGRAMS = \
 	elements/mxfdemux \
 	elements/mxfmux \
 	elements/id3mux \
+	elements/watchdog \
 	pipelines/mxf \
 	$(check_mimic) \
 	libs/mpegvideoparser \
