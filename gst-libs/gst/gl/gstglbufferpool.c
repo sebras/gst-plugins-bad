@@ -361,6 +361,9 @@ gst_gl_buffer_pool_finalize (GObject * object)
   if (pool->upload)
     gst_object_unref (pool->upload);
 
+  if (priv->allocator)
+    gst_object_unref (priv->allocator);
+
   G_OBJECT_CLASS (gst_gl_buffer_pool_parent_class)->finalize (object);
 
   /* only release the context once all our memory have been deleted */
